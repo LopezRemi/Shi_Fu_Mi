@@ -22,25 +22,45 @@ var n = false
  }
 }  
 
-
-//fonction utilisé pour déterminer le choix de l'ordinateur.
-function moveOfAi () {
- 
-    var compMove = Math.random();
-if (compMove < 0.34) {
-    compMove = "pierre";
-} else if(compMove <= 0.67) {
-    compMove = "feuille";
-} else {
-    compMove = "ciseaux";
-    }
-  return
-}
+var playerMove = prompt("Choisissez-vous pierre, feuille, ou ciseaux ?");
 
 //fonction utilisé pour déterminer le choix du joueur.
-function moveOfPlayer () {
-    var playerMove = 
+function askPlayer () {
+     playerMove = prompt("Faite un choix entre Pierre, Feuille ou ciseaux ?");
 }
+
+function notGoodEntry (){
+    while (playerMove !== "pierre" && playerMove !== "feuille" && playerMove !== "ciseaux"){
+        alert(playerMove + "Ceci n'est pas valide");
+        askPlayer();
+    }
+}
+notGoodEntry();
+
+//fonction utilisé pour déterminer le choix de l'ordinateur.
+var compMove = Math.random();
+    if (compMove < 0.34) {
+    compMove = "pierre";
+}  else if(compMove <= 0.67) {
+    compMove = "feuille";
+}   else {
+    compMove = "ciseaux";
+    } 
+
+//code pour comparer les résultats du joueur et de l'utilisateur    
+    while (playerMove === compMove){
+        alert("égalité")
+    }if (playerMove === "pierre" ){
+        if (compMove === "ciceaux") {
+            alert ("vous avez gagnez ! " + firstname)
+        } else {
+            alert ("la Feuille gagne, vous avez perdus " + firstname + " :'(")
+        } 
+     };
+
+
+
+
 
 
 
