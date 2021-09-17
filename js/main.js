@@ -53,12 +53,13 @@ var compMove = Math.random();
 } 
 
 //code pour comparer les résultats du joueur et de l'utilisateur    
-    if (playerMove.toLocaleLowerCase() === compMove){
+    if (playerMove.toLowerCase() === compMove){
         alert("égalité")
-}   else if (playerMove === "pierre" && compMove === "ciseaux" || playerMove === "feuille" && compMove === "pierre" ||
-    playerMove === "ciseaux" && compMove === "feuille"){
+}   else if (playerMove.toLowerCase() === "pierre" && compMove === "ciseaux" || playerMove.toLowerCase() === "feuille" && compMove === "pierre" ||
+    playerMove.toLowerCase() === "ciseaux" && compMove === "feuille"){
         alert("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
-        } else {
+        } else if (playerMove.toLowerCase() === "pierre" && compMove === "feuille" || playerMove.toLowerCase() === "feuille" && compMove === "ciseaux" ||
+        playerMove.toLowerCase() === "ciseaux" && compMove === "pierre"){
             alert ("l'ordinateur a joué " + compMove + " vous avez perdus " + firstname + " :'(")
 };
      
