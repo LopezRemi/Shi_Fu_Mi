@@ -48,21 +48,12 @@ var compMove = Math.random();
     } 
 
 //code pour comparer les résultats du joueur et de l'utilisateur    
-    while (playerMove === compMove){
+    if (playerMove === compMove){
         alert("égalité")
-    }if (playerMove === "pierre" ){
-        if (compMove === "ciceaux") {
-            alert ("vous avez gagnez ! " + firstname)
+}   if (playerMove === "pierre" && compMove === "ciseaux" || playerMove === "feuille" && compMove === "pierre" ||
+    playerMove === "ciseaux" && compMove === "feuille"){
+        alert ("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
         } else {
-            alert ("la Feuille gagne, vous avez perdus " + firstname + " :'(")
-        } 
-     };
-
-
-
-
-
-
-
-
-
+            alert ("l'ordinateur a joué " + compMove + " vous avez perdus " + firstname + " :'(")
+        };
+     
