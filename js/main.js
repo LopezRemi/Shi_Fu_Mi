@@ -9,7 +9,7 @@ var n = false
         firstname = prompt("Qu'elle est votre prénom ?");
         var n = false
     if (firstname.length >= 3 && firstname.length != null) {
-        alert("Merci "+ firstname)
+        alert("Merci "+ firstname + " préparer vous a jouer ")
        var n = true
     }
     if (firstname.length < 3 && firstname.length > 0) {
@@ -22,20 +22,21 @@ var n = false
  }
 }  
 
+//fonction utilisé pour déterminer le choix du joueur interdir les autres réponses et tolerer les entrées en Majuscules
 var playerMove = prompt("Choisissez-vous pierre, feuille, ou ciseaux ?");
 
-//fonction utilisé pour déterminer le choix du joueur.
 function askPlayer () {
      playerMove = prompt("Faite un choix entre Pierre, Feuille ou ciseaux ?");
 }
 
 function notGoodEntry (){
-    while (playerMove !== "pierre" && playerMove !== "feuille" && playerMove !== "ciseaux"){
+    while (playerMove.toLowerCase() !== "pierre" && playerMove.toLowerCase() !== "feuille" && playerMove.toLowerCase() !== "ciseaux"){
         alert(playerMove + "Ceci n'est pas valide");
         askPlayer();
     }
 }
 notGoodEntry();
+
 
 //fonction utilisé pour déterminer le choix de l'ordinateur.
 var compMove = Math.random();
@@ -50,9 +51,9 @@ var compMove = Math.random();
 //code pour comparer les résultats du joueur et de l'utilisateur    
     if (playerMove === compMove){
         alert("égalité")
-}   if (playerMove === "pierre" && compMove === "ciseaux" || playerMove === "feuille" && compMove === "pierre" ||
+}   else if (playerMove === "pierre" && compMove === "ciseaux" || playerMove === "feuille" && compMove === "pierre" ||
     playerMove === "ciseaux" && compMove === "feuille"){
-        alert ("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
+        alert("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
         } else {
             alert ("l'ordinateur a joué " + compMove + " vous avez perdus " + firstname + " :'(")
         };
