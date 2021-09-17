@@ -53,10 +53,10 @@ var compMove = Math.random();
 } 
 
 //code pour comparer les résultats du joueur et de l'utilisateur    
-    if (playerMove === compMove){
+    if (playerMove.toLocaleLowerCase() === compMove){
         alert("égalité")
-}   else if (playerMove === "pierre","Pierre" && compMove === "ciseaux" || playerMove === "feuille","Feuille" && compMove === "pierre" ||
-    playerMove === "ciseaux","Ciseaux" && compMove === "feuille"){
+}   else if (playerMove === "pierre" && compMove === "ciseaux" || playerMove === "feuille" && compMove === "pierre" ||
+    playerMove === "ciseaux" && compMove === "feuille"){
         alert("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
         } else {
             alert ("l'ordinateur a joué " + compMove + " vous avez perdus " + firstname + " :'(")
