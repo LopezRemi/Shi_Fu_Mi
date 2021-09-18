@@ -1,4 +1,4 @@
- alert("Bienvenue sur le jeu 'Shi fu Mi' fabriqué par mes soins");
+ alert("Bienvenue sur le jeu de 'Shi fu Mi' fabriqué par mes soins");
 
 //variable utisilé dans le choix du Prénom
 var g = false
@@ -6,10 +6,10 @@ var n = false
 
 //boucle utilisé pour le choix du prénom
 while (n == false) {
-        firstname = prompt("Qu'elle est votre prénom ?");
+        firstname = prompt("Quel est votre prénom ?");
         var n = false
     if (firstname.length < 15 && firstname.length != null && firstname.length > 2 ) {
-        alert("Merci "+ firstname + " préparer vous a jouer ")
+        alert("Merci "+ firstname + " préparez vous à jouer contre la RNG ! ")
        var n = true
     }
     if (firstname.length < 3 && firstname.length > 0) {
@@ -44,22 +44,22 @@ notGoodEntry();
 
 //fonction utilisé pour déterminer le choix de l'ordinateur.
 var compMove = Math.random();
-    if (compMove < 0.34) {
+    if (compMove < 0.33) {
     compMove = "pierre";
-    }  else if(compMove <= 0.67) {
+    }  else if(compMove <= 0.66) {
     compMove = "feuille";
        }   else {
     compMove = "ciseaux";
 } 
 
-//code pour comparer les résultats du joueur et de l'utilisateur    
+//code pour comparer les résultats du joueur et de l'ordinateur 
     if (playerMove.toLowerCase() === compMove){
-        alert("égalité")
+        alert("égalité !")
 }   else if (playerMove.toLowerCase() === "pierre" && compMove === "ciseaux" || playerMove.toLowerCase() === "feuille" && compMove === "pierre" ||
     playerMove.toLowerCase() === "ciseaux" && compMove === "feuille"){
-        alert("l'ordinateur a joué " + compMove + " vous avez gagnez ! " + firstname)
+        alert("l'ordinateur a joué " + compMove + " vous avez gagné ! " + firstname)
         } else if (playerMove.toLowerCase() === "pierre" && compMove === "feuille" || playerMove.toLowerCase() === "feuille" && compMove === "ciseaux" ||
         playerMove.toLowerCase() === "ciseaux" && compMove === "pierre"){
-            alert ("l'ordinateur a joué " + compMove + " vous avez perdus " + firstname + " :'(")
+            alert ("l'ordinateur a joué " + compMove + " vous avez perdu " + firstname + " :'(")
 };
      
