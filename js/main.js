@@ -1,3 +1,4 @@
+
 var nickName = false
 
 //boucle utilisé pour le choix du prénom
@@ -19,7 +20,6 @@ while (nickName == false) {
     }    
 }
 
-
 //fonction utilisé pour déterminer le choix du joueur interdir les autres réponses et tolerer les entrées en Majuscules
 var playerMove = prompt("Choisissez pierre, feuille, ou ciseaux ?");
 
@@ -34,7 +34,6 @@ function notGoodEntry (){
     }
 }
 notGoodEntry();
-
 
 //fonction utilisé pour déterminer le choix de l'ordinateur.
 var compMove = Math.random();
@@ -57,3 +56,4 @@ var compMove = Math.random();
         else {
             alert ("l'ordinateur a joué " + compMove + " vous avez perdu " + firstname + " :'(")
         };
+
