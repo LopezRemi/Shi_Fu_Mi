@@ -20,11 +20,14 @@ while (nickName == false) {
     }    
 }
 
-//fonction utilisé pour déterminer le choix du joueur interdir les autres réponses et tolerer les entrées en Majuscules
-var playerMove = prompt("Choisissez pierre, feuille, ou ciseaux ?");
+main()
+function main() {
 
+//fonction utilisé pour déterminer le choix du joueur interdir les autres réponses et tolerer les entrées en Majuscules
+
+var playerMove = prompt("Choisissez pierre, feuille, ou ciseaux ?");
 function askPlayer () {
-     playerMove = prompt("Faite un choix entre Pierre, Feuille ou ciseaux ?");
+    playerMove = prompt("Jouer seulement pierre, feuille, ou ciseaux.");
 }
 
 function notGoodEntry (){
@@ -35,25 +38,41 @@ function notGoodEntry (){
 }
 notGoodEntry();
 
-//fonction utilisé pour déterminer le choix de l'ordinateur.
-var compMove = Math.random();
-    if (compMove < 0.33) {
-    compMove = "pierre";
-    }  else if(compMove <= 0.66) {
-    compMove = "feuille";
-       }   else {
-    compMove = "ciseaux";
-} 
 
-//code pour comparer les résultats du joueur et de l'ordinateur 
-    if (playerMove.toLowerCase() === compMove){
+var compMove = Math.random();
+if (compMove < 0.33) {
+compMove = "pierre";
+}  else if(compMove <= 0.66) {
+compMove = "feuille";
+   }   else {
+compMove = "ciseaux";
+       };
+
+//statement pour comparer les résultats du joueur et de l'ordinateur 
+if (playerMove.toLowerCase() === compMove){
         alert("égalité !")
-    }   
-        else if (playerMove.toLowerCase() === "pierre" && compMove === "ciseaux" || playerMove.toLowerCase() === "feuille" && compMove === "pierre" ||
+}   
+    else if (playerMove.toLowerCase() === "pierre" && compMove === "ciseaux" || playerMove.toLowerCase() === "feuille" && compMove === "pierre" ||
     playerMove.toLowerCase() === "ciseaux" && compMove === "feuille"){
         alert("l'ordinateur a joué " + compMove + " vous avez gagné ! " + firstname)
-        }
+    }
         else {
             alert ("l'ordinateur a joué " + compMove + " vous avez perdu " + firstname + " :'(")
         };
+
+do {
+    var playAgain = prompt("voulez vous rejouer 'oui ou 'non'  ?")
+} while (!["oui", "non"].includes(playAgain)); {
+
+    if (playAgain === "oui") {
+        main()  //rapelle de la fonction main pour relancer le jeu.
+    }
+        else {
+        alert ("Merci d'avoir joué " + firstname + " =)")
+        }
+  }
+};
+
+
+
 
